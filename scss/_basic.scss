@@ -3,6 +3,12 @@
   text-transform: uppercase;
 }
 
+%flex_row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 body {
   margin: 0;
   padding: 0;

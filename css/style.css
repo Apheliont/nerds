@@ -3,9 +3,14 @@
 /* colors to elements */
 /* font */
 /* sizes */
-.header-container__menu li > a, .offers_button {
+.header-container__menu li > a, .workWeDo_button {
   text-decoration: none;
   text-transform: uppercase; }
+
+.workWeDo, .description, .clients {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; }
 
 body {
   margin: 0;
@@ -88,48 +93,42 @@ ul {
   .yellow-btn:active {
     background-color: #c09b24; }
 
+.main__container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 80px 0; }
+
 .slider {
   height: 350px;
   background-color: #eeeeee; }
 
-.offers {
-  min-height: 460px;
-  padding-top: 80px; }
-
-.offers__container, .description__container {
-  max-width: 880px;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding-bottom: 80px;
+.workWeDo {
+  min-height: 380px;
   border-bottom: 2px solid #eeeeee; }
 
-.offers__order {
+.workWeDo__order {
   width: 240px;
-  min-height: 300px;
-  position: relative; }
+  min-height: 300px; }
 
-.offers_button {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin-top: auto;
+.workWeDo_button {
+  display: inline-block;
+  margin-top: 30px;
   color: white;
   font-size: 12px;
   padding: 10px 40px;
   border-radius: 5px; }
 
 .description {
-  min-height: 475px;
-  padding-top: 80px; }
+  min-height: 470px;
+  padding: 80px 0;
+  border-bottom: 2px solid #eeeeee; }
 
-.description__container > div:nth-of-type(1) {
+.description > article:nth-of-type(1) {
   max-width: 70%; }
-  .description__container > div:nth-of-type(1) p {
+  .description > article:nth-of-type(1) p {
     margin-bottom: 40px; }
 
-.description__container > div:nth-of-type(2) {
+.description > article:nth-of-type(2) {
   max-width: 30%;
   display: flex;
   justify-content: space-between;
@@ -169,5 +168,16 @@ ul {
       width: 25px;
       height: 2px;
       background-color: #fb565a; }
+
+.clients {
+  min-height: 170px;
+  border-bottom: 2px solid #eeeeee;
+  align-items: center;
+  text-align: center; }
+  .clients img {
+    width: 70%;
+    opacity: 0.4; }
+  .clients div:nth-of-type(3) {
+    padding-top: 20px; }
 
 /*# sourceMappingURL=style.css.map */

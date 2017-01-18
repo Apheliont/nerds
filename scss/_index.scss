@@ -1,35 +1,29 @@
+.main__container {
+  max-width: $inner_container;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
 .slider {
   height: 350px;
   background-color: $background_slider;
 }
 // offers section
-.offers {
-  min-height: 460px;
-  padding-top: 80px;
-}
-
-.offers__container {
-  max-width: $inner_container;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding-bottom: 80px;
+.workWeDo {
+  @extend %flex_row;
+  min-height: 380px;
   border-bottom: 2px solid $border_color;
 }
 
-.offers__order {
+.workWeDo__order {
   width: 240px;
   min-height: 300px;
-  position: relative;
 }
 
-.offers_button {
+.workWeDo_button {
   @extend %button_link;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin-top: auto;
+  display: inline-block;
+  margin-top: 30px;
   color: white;
   font-size: 12px;
   padding: 10px 40px;
@@ -39,22 +33,21 @@
 
 // description section
 .description {
-  min-height: 475px;
-  padding-top: 80px;
+  @extend %flex_row;
+  min-height: 470px;
+  padding: 80px 0;
+  border-bottom: 2px solid $border_color;
 }
 
-.description__container {
-  @extend .offers__container;
-}
 
-.description__container > div:nth-of-type(1) {
+.description > article:nth-of-type(1) {
   max-width: 70%;
   p {
     margin-bottom: 40px;
   }
 }
 
-.description__container > div:nth-of-type(2) {
+.description > article:nth-of-type(2) {
   max-width: 30%;
   display: flex;
   justify-content: space-between;
@@ -103,4 +96,24 @@
     }
   }
 }
+
+// clients section
+
+.clients {
+  @extend %flex_row;
+  min-height: 170px;
+  border-bottom: 2px solid $border_color;
+  align-items: center;
+  text-align: center;
+  img {
+    width: 70%;
+    opacity: 0.4;
+  }
+
+  div:nth-of-type(3) {
+    padding-top: 20px;
+  }
+}
+
+
 
