@@ -1,6 +1,7 @@
 %button_link {
   text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
 }
 
 %flex_row {
@@ -67,7 +68,15 @@ header {
 .header-container__logo {
   height: 60px;
   margin-top: 22px;
-  }
+}
+
+.footer-container {
+  max-width: $inner_container;
+  margin: 0 auto;
+  min-height: 215px;
+  display: flex;
+  flex-flow: row wrap;
+}
 
 
 p {
@@ -80,6 +89,7 @@ h2 {
   color: $h2_font_color;
   font-weight: 600;
   text-transform: uppercase;
+  margin: 0;
 }
 
 h1 {

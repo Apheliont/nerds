@@ -3,9 +3,10 @@
 /* colors to elements */
 /* font */
 /* sizes */
-.header-container__menu li > a, .workWeDo_button {
+.header-container__menu li > a, .workWeDo_button, .map_button {
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  text-align: center; }
 
 .workWeDo, .description, .clients {
   display: flex;
@@ -55,6 +56,13 @@ header {
   height: 60px;
   margin-top: 22px; }
 
+.footer-container {
+  max-width: 880px;
+  margin: 0 auto;
+  min-height: 215px;
+  display: flex;
+  flex-flow: row wrap; }
+
 p {
   font-size: 16px;
   color: #9b9fa1; }
@@ -63,7 +71,8 @@ h2 {
   font-size: 18px;
   color: #000;
   font-weight: 600;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: 0; }
 
 h1 {
   font-size: 36px;
@@ -93,7 +102,7 @@ ul {
   .yellow-btn:active {
     background-color: #c09b24; }
 
-.main__container {
+.main-container {
   max-width: 880px;
   margin: 0 auto;
   padding: 80px 0; }
@@ -109,8 +118,10 @@ ul {
 .workWeDo__order {
   width: 240px;
   min-height: 300px; }
+  .workWeDo__order img {
+    margin-bottom: 20px; }
 
-.workWeDo_button {
+.workWeDo_button, .map_button {
   display: inline-block;
   margin-top: 30px;
   color: white;
@@ -179,5 +190,25 @@ ul {
     opacity: 0.4; }
   .clients div:nth-of-type(3) {
     padding-top: 20px; }
+
+.map {
+  min-height: 415px;
+  background: url(../images/map.jpg) no-repeat;
+  background-size: cover;
+  position: relative; }
+  .map div {
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    top: 0;
+    bottom: 0;
+    left: 12%;
+    margin: auto;
+    background-color: white;
+    padding: 30px 25px 25px 25px; }
+
+.map_button {
+  margin-bottom: 0;
+  display: block; }
 
 /*# sourceMappingURL=style.css.map */
