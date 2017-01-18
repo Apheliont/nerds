@@ -1,0 +1,60 @@
+/* colors */
+$grey_1: #626262;
+$grey_2: #e1e1e1;
+$grey_3: #eeeeee;
+$grey_4: #a2a9ac;
+$grey_5: #d7dcde;
+$grey_6: #9b9fa1; //p font
+
+$blue_1: #56bffb;
+
+$red_1: #fb565a;
+$red_2: #d6494d;
+$red_3: #b63538;
+
+$green_1: #00ca74;
+$green_2: #01a25e;
+$green_3: #009053;
+
+$yellow_1: #efc84a;
+$yellow_2: #d6ae2c;
+$yellow_3: #c09b24;
+
+$white_1: #fff;
+
+$black_1: #000;
+$black_2: #283136; //list color
+
+/* colors to elements */
+$background_around: $grey_1;
+$background_header: $grey_3;
+$background_wrapper: $white_1;
+$background_slider: $grey_3;
+
+$border_color: $grey_3;
+$list_dash: $red_1;
+
+$button_red: $red_1;
+$button_red-hover: $red_2;
+$button_red-push: $red_3;
+
+$button_green: $green_1;
+$button_green-hover: $green_2;
+$button_green-push: $green_3;
+
+$button_yellow: $yellow_1;
+$button_yellow-hover: $yellow_2;
+$button_yellow-push: $yellow_3;
+
+$button_social: $grey_2;
+
+
+/* font */
+$font: 'Roboto', sans-serif;
+$p_font_color: $grey_6;
+$h2_font_color: $black_1;
+$h1_font_color: $black_1;
+$ul_font_color: $black_2;
+
+/* sizes */
+$inner_container: 880px;
