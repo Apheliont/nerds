@@ -1,7 +1,9 @@
+// header section see in _basic.scss
+
 .main-container {
-  max-width: $inner_container;
-  margin: 0 auto;
-  padding: 80px 0;
+  @extend %inner_container;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .slider {
@@ -38,23 +40,26 @@
 .description {
   @extend %flex_row;
   min-height: 470px;
-  padding: 80px 0;
+  padding: 70px 0;
   border-bottom: 2px solid $border_color;
-}
-
-
-.description > article:nth-of-type(1) {
-  max-width: 70%;
-  p {
-    margin-bottom: 40px;
+  article {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+  }
+  h2 {
+    margin-top: 20px;
   }
 }
 
-.description > article:nth-of-type(2) {
+
+.description > article:first-of-type {
+  max-width: 70%;
+  padding-right: 80px;
+}
+
+.description > article:last-of-type {
   max-width: 30%;
-  display: flex;
-  justify-content: space-between;
-  flex-flow: column nowrap;
 }
 
 .description__logo {
@@ -63,13 +68,14 @@
     width: 185px;
     padding: 0 0 35px 0;
     border-bottom: 2px solid $border_color;
+    margin-top: -25px;
   }
   h2 {
     text-align: center;
     z-index: 5;
     background: $white_1;
     position: absolute;
-    bottom: -20px;
+    bottom: -5px;
     left: 20%;
     right: 20%;
   }
@@ -77,16 +83,14 @@
 
 .description__list {
   list-style: none;
-  padding-left: 0;
-  margin-left: 0;
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 0;
 
   li {
     position: relative;
     padding-left: 35px;
     margin-bottom: 30px;
-    &:last-child {
-      margin-bottom: 0;
-    }
     &:before {
       content: "";
       position: absolute;
@@ -96,6 +100,9 @@
       width: 25px;
       height: 2px;
       background-color: $list_dash;
+    }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
@@ -132,10 +139,12 @@
     top: 0;
     bottom: 0;
     left: 12%;
-
     margin: auto;
     background-color: white;
     padding: 30px 25px 25px 25px;
+    span {
+      font-weight: normal;
+    }
   }
 }
 
@@ -144,6 +153,9 @@
   margin-bottom: 0;
   display: block;
 }
+
+// footer section see in _basic.scss
+
 
 
 
