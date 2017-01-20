@@ -43,6 +43,21 @@ h1 {
   color: #a6a6a6;
   margin-right: 10px; }
 
+input[type="text"],
+input[type="email"],
+.textarea {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px; }
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  .textarea:hover {
+    border-color: #a2a9ac; }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  .textarea:focus {
+    border-color: #56bffb;
+    outline: none; }
+
 body {
   margin: 0;
   padding: 0;
@@ -68,8 +83,9 @@ header {
 .header-container__menu {
   list-style: none;
   margin: 0;
-  padding-left: 5px;
+  padding-left: 0;
   flex: 2 1 560px;
+  flex-flow: row nowrap;
   text-align: right; }
   .header-container__menu li {
     flex: 1 1 90px; }
@@ -77,9 +93,14 @@ header {
       line-height: 130px;
       color: black;
       font-weight: 400; }
-    .header-container__menu li li:last-of-type {
-      width: 200px;
-      border: 1px solid red; }
+      .header-container__menu li > a:hover, .header-container__menu li > a:hover i {
+        color: #fb565a; }
+      .header-container__menu li > a:active, .header-container__menu li > a:active i {
+        color: #d5d5d5; }
+    .header-container__menu li:first-child {
+      flex: 1 1; }
+    .header-container__menu li:last-child {
+      flex: 2 1 170px; }
 
 .header-container__logo {
   height: 60px;
@@ -102,6 +123,10 @@ header {
     text-align: center;
     line-height: 57px;
     margin-right: 20px; }
+    .footer-container a:hover {
+      background-color: #d6494d; }
+    .footer-container a:active {
+      background-color: #b63538; }
 
 .red-btn {
   background-color: #fb565a; }
@@ -123,6 +148,13 @@ header {
     background-color: #d6ae2c; }
   .yellow-btn:active {
     background-color: #c09b24; }
+
+.grey-btn {
+  background-color: #f1f1f1; }
+  .grey-btn:hover {
+    background-color: #e5e5e5; }
+  .grey-btn:active {
+    background-color: #d5d5d5; }
 
 .main-container {
   padding-top: 80px;
@@ -213,6 +245,8 @@ header {
   .clients img {
     width: 70%;
     opacity: 0.4; }
+    .clients img:hover, .clients img:active {
+      opacity: 1; }
   .clients div:nth-of-type(3) {
     padding-top: 20px; }
 
@@ -221,21 +255,65 @@ header {
   background: url(../images/map.jpg) no-repeat;
   background-size: cover;
   position: relative; }
-  .map div {
-    position: absolute;
-    height: 240px;
-    width: 240px;
-    top: 0;
-    bottom: 0;
-    left: 12%;
-    margin: auto;
-    background-color: white;
-    padding: 30px 25px 25px 25px; }
-    .map div span {
-      font-weight: normal; }
+
+.map__writeUs {
+  position: absolute;
+  height: 240px;
+  width: 240px;
+  top: 0;
+  bottom: 0;
+  left: 12%;
+  margin: auto;
+  background-color: white;
+  padding: 30px 25px 25px 25px; }
+  .map__writeUs span {
+    font-weight: normal; }
 
 .map_button {
   margin-bottom: 0;
   display: block; }
+
+.send-form {
+  position: fixed;
+  background: #fff;
+  max-width: 630px;
+  height: 415px;
+  padding: 42px 80px;
+  box-shadow: 5px 5px 20px grey;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-flow: column nowrap; }
+  .send-form label {
+    display: block;
+    margin-bottom: 10px; }
+  .send-form .send-form__nameAndEmail,
+  .send-form .send-form__buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 20px;
+    width: 100%; }
+    .send-form .send-form__nameAndEmail > *,
+    .send-form .send-form__buttons > * {
+      flex: 1; }
+      .send-form .send-form__nameAndEmail > *:first-child,
+      .send-form .send-form__buttons > *:first-child {
+        margin-right: 20px; }
+  .send-form textarea {
+    height: 110px;
+    margin-bottom: 20px; }
+  .send-form input, .send-form input, .send-form textarea {
+    padding: 8px 20px;
+    border: 2px solid #eeeeee;
+    border-radius: 5px;
+    width: 100%; }
+  .send-form .send-form__btn {
+    border: none;
+    margin-bottom: 10px;
+    outline: none; }
 
 /*# sourceMappingURL=style.css.map */
