@@ -3,17 +3,24 @@
 /* colors to elements */
 /* font */
 /* sizes */
-.header-container__menu li > a, .workWeDo_button, .map_button {
+.slider_button, .workWeDo_button, .map_button, .send-form .send-form__btn {
+  display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
-  text-align: center; }
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 40px;
+  font-size: 12px;
+  outline: none;
+  border: none; }
 
-header .header-container, .header-container__menu, .footer-container, .workWeDo, .description, .clients {
+.header-container__menu, .footer-container, .workWeDo, .description, .clients {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between; }
 
-header .header-container, .footer-container, .main-container {
+header .header-container, .footer-container, .main-container, .slider .slider__container {
   max-width: 900px;
   padding: 0 10px;
   margin: 0 auto; }
@@ -75,6 +82,8 @@ body {
 header {
   background-color: #eeeeee; }
   header .header-container {
+    display: flex;
+    flex-flow: row nowrap;
     height: 85px; }
     header .header-container > a {
       flex: 1 1 280px;
@@ -90,6 +99,9 @@ header {
   .header-container__menu li {
     flex: 1 1 90px; }
     .header-container__menu li > a {
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
       line-height: 130px;
       color: black;
       font-weight: 400; }
@@ -161,8 +173,24 @@ header {
   padding-bottom: 80px; }
 
 .slider {
-  height: 350px;
   background-color: #eeeeee; }
+  .slider .slider__slider-1 {
+    display: flex;
+    height: 350px;
+    flex-flow: row wrap;
+    align-items: stretch; }
+    .slider .slider__slider-1 > article {
+      flex: 1;
+      padding-top: 75px; }
+      .slider .slider__slider-1 > article:last-child {
+        background: url(../images/slider_1.png) no-repeat right;
+        background-size: 70%; }
+      .slider .slider__slider-1 > article:first-child {
+        padding-right: 80px; }
+
+.slider_button {
+  width: 240px;
+  margin-top: 20px; }
 
 .workWeDo {
   min-height: 380px;
@@ -174,13 +202,8 @@ header {
   .workWeDo__order img {
     margin-bottom: 20px; }
 
-.workWeDo_button, .map_button {
-  display: inline-block;
-  margin-top: 30px;
-  color: white;
-  font-size: 12px;
-  padding: 10px 40px;
-  border-radius: 5px; }
+.workWeDo_button {
+  margin-top: 30px; }
 
 .description {
   min-height: 470px;
@@ -312,8 +335,8 @@ header {
     border-radius: 5px;
     width: 100%; }
   .send-form .send-form__btn {
-    border: none;
-    margin-bottom: 10px;
-    outline: none; }
+    margin-bottom: 10px; }
+    .send-form .send-form__btn:last-child {
+      color: black; }
 
 /*# sourceMappingURL=style.css.map */

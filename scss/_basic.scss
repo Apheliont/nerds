@@ -1,7 +1,14 @@
 %button_link {
+  display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 40px;
+  font-size: 12px;
+  outline: none;
+  border: none;
 }
 
 %flex_row {
@@ -85,7 +92,8 @@ header {
   background-color: $background_header;
     .header-container {
       @extend %inner_container;
-      @extend %flex_row;
+      display: flex;
+      flex-flow: row nowrap;
       height: 85px;
       > a {
         flex: 1 1 280px;
@@ -105,7 +113,10 @@ header {
   li {
     flex: 1 1 90px;
     > a {
-      @extend %button_link;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+
       line-height: 130px;
       color: black;
       font-weight: 400;
