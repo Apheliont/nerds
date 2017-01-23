@@ -10,6 +10,7 @@ $grey_6: #9b9fa1; //p font
 $grey_7: #f1f1f1; // grey button
 $grey_8: #e5e5e5; //grey button hover
 $grey_9: #d5d5d5; //grey button active
+$grey_10: #c1c1c1; //slider controll center point
 
 $blue_1: #56bffb;
 
@@ -42,6 +43,8 @@ $border_focus: $blue_1;
 
 $list_dash: $red_1;
 
+$slider_pointer: $grey_10;
+
 $button_red: $red_1;
 $button_red-hover: $red_2;
 $button_red-push: $red_3;
@@ -63,7 +66,7 @@ $button_social: $grey_2;
 
 /* font */
 $font: 'Roboto', sans-serif;
-$p_font_color: $grey_6;
+$p_font_color:  darken( $grey_6, 10%);
 $h2_font_color: $black_1;
 $h1_font_color: $black_1;
 $ul_font_color: $black_2;

@@ -7,28 +7,87 @@
 }
 
 .slider {
+  position: relative;
+  input {
+    display: none;
+  }
   background-color: $background_slider;
   .slider__container {
+    min-height: 370px;
     @extend %inner_container;
+    position: relative;
+  }
+}
 
+.slider__controls {
+  position: absolute;
+  width: 150px;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -75px;
+  z-index: 100;
+}
+
+.slider__slider-1,
+.slider__slider-2,
+.slider__slider-3 {
+  display: none;
+  flex-flow: row wrap-reverse;
+  min-height: inherit;
+  > div:first-child {
+    flex: 1 1 50%;
+    min-height: inherit;
+    padding: 7% 150px 7% 0;
   }
-  .slider__slider-1 {
-    display: flex;
-    height: 350px;
-    flex-flow: row wrap;
-    align-items: stretch;
-    > article {
-      flex: 1;
-      padding-top: 75px;
-      &:last-child {
-        background: url(../images/slider_1.png) no-repeat right;
-        background-size: 70%;
-      }
-      &:first-child {
-        padding-right: 80px;
-      }
-    }
+
+}
+
+.slider__image-block {
+  margin: auto 0;
+  text-align: right;
+}
+
+.slider__slider-3 {
+  > div:first-child {
+    padding-right: 100px;
   }
+}
+
+.slider__controls label {
+  cursor: pointer;
+  display: inline-block;
+  height: 8px;
+  margin: 25px 12px 0 16px;
+  position: relative;
+  width: 8px;
+  border-radius: 50%;
+  transition: background ease-in-out .5s;
+  background-color: $white_1;
+}
+
+.slider__controls label:after {
+  border: 3px solid $white_1;
+  content: " ";
+  display: block;
+  height: 7px;
+  left: -2px;
+  position: absolute;
+  top: -2px;
+  width: 7px;
+  border-radius: 50%;
+}
+
+.slider__controls label:hover,
+#slide-1:checked ~ .slider__controls label:nth-of-type(1),
+#slide-2:checked ~ .slider__controls label:nth-of-type(2),
+#slide-3:checked ~ .slider__controls label:nth-of-type(3) {
+  background: $slider_pointer;
+}
+
+#slide-1:checked ~ .slider__container > .slider__slider-1,
+#slide-2:checked ~ .slider__container > .slider__slider-2,
+#slide-3:checked ~ .slider__container > .slider__slider-3 {
+  display: flex;
 }
 
 .slider_button {
@@ -173,7 +232,7 @@
 }
 
 
-.map_button {
+.map_writeUsButton {
   @extend %button_link;
   margin-bottom: 0;
   display: block;
@@ -192,25 +251,13 @@
   top: 0;
   bottom: 0;
   z-index: 10;
-  display: flex;
+  display: none;
   flex-flow: column nowrap;
   label {
     display: block;
     margin-bottom: 10px;
   }
-  .send-form__nameAndEmail,
-  .send-form__buttons {
-    display: flex;
-    flex-flow: row nowrap;
-    margin-bottom: 20px;
-    width: 100%;
-    > * {
-      flex: 1;
-      &:first-child {
-        margin-right: 20px;
-      }
-    }
-}
+
   textarea {
     height: 110px;
     margin-bottom: 20px;
@@ -221,7 +268,8 @@
     border-radius: 5px;
     width: 100%;
   }
-  .send-form__btn {
+  .send-form__btn-send,
+  .send-form__btn-reset  {
     @extend %button_link;
     margin-bottom: 10px;
     &:last-child {
@@ -231,6 +279,24 @@
 
 }
 
+.send-form__nameAndEmail,
+.send-form__buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 20px;
+  width: 100%;
+  > * {
+    flex: 1;
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+}
+
+
+.send-form_visible {
+  display: flex;
+}
 
 
 // footer section see in _basic.scss

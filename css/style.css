@@ -3,7 +3,8 @@
 /* colors to elements */
 /* font */
 /* sizes */
-.slider_button, .workWeDo_button, .map_button, .send-form .send-form__btn {
+.slider_button, .workWeDo_button, .map_writeUsButton, .send-form .send-form__btn-send,
+.send-form .send-form__btn-reset {
   display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
@@ -29,7 +30,7 @@ p, ul {
   font-size: 16px;
   letter-spacing: 0.5px;
   font-weight: 300;
-  color: #9b9fa1; }
+  color: #818688; }
 
 h2 {
   font-size: 18px;
@@ -173,20 +174,74 @@ header {
   padding-bottom: 80px; }
 
 .slider {
+  position: relative;
   background-color: #eeeeee; }
-  .slider .slider__slider-1 {
-    display: flex;
-    height: 350px;
-    flex-flow: row wrap;
-    align-items: stretch; }
-    .slider .slider__slider-1 > article {
-      flex: 1;
-      padding-top: 75px; }
-      .slider .slider__slider-1 > article:last-child {
-        background: url(../images/slider_1.png) no-repeat right;
-        background-size: 70%; }
-      .slider .slider__slider-1 > article:first-child {
-        padding-right: 80px; }
+  .slider input {
+    display: none; }
+  .slider .slider__container {
+    min-height: 370px;
+    position: relative; }
+
+.slider__controls {
+  position: absolute;
+  width: 150px;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -75px;
+  z-index: 100; }
+
+.slider__slider-1,
+.slider__slider-2,
+.slider__slider-3 {
+  display: none;
+  flex-flow: row wrap-reverse;
+  min-height: inherit; }
+  .slider__slider-1 > div:first-child,
+  .slider__slider-2 > div:first-child,
+  .slider__slider-3 > div:first-child {
+    flex: 1 1 50%;
+    min-height: inherit;
+    padding: 7% 150px 7% 0; }
+
+.slider__image-block {
+  margin: auto 0;
+  text-align: right; }
+
+.slider__slider-3 > div:first-child {
+  padding-right: 100px; }
+
+.slider__controls label {
+  cursor: pointer;
+  display: inline-block;
+  height: 8px;
+  margin: 25px 12px 0 16px;
+  position: relative;
+  width: 8px;
+  border-radius: 50%;
+  transition: background ease-in-out .5s;
+  background-color: #fff; }
+
+.slider__controls label:after {
+  border: 3px solid #fff;
+  content: " ";
+  display: block;
+  height: 7px;
+  left: -2px;
+  position: absolute;
+  top: -2px;
+  width: 7px;
+  border-radius: 50%; }
+
+.slider__controls label:hover,
+#slide-1:checked ~ .slider__controls label:nth-of-type(1),
+#slide-2:checked ~ .slider__controls label:nth-of-type(2),
+#slide-3:checked ~ .slider__controls label:nth-of-type(3) {
+  background: #c1c1c1; }
+
+#slide-1:checked ~ .slider__container > .slider__slider-1,
+#slide-2:checked ~ .slider__container > .slider__slider-2,
+#slide-3:checked ~ .slider__container > .slider__slider-3 {
+  display: flex; }
 
 .slider_button {
   width: 240px;
@@ -292,7 +347,7 @@ header {
   .map__writeUs span {
     font-weight: normal; }
 
-.map_button {
+.map_writeUsButton {
   margin-bottom: 0;
   display: block; }
 
@@ -309,23 +364,11 @@ header {
   top: 0;
   bottom: 0;
   z-index: 10;
-  display: flex;
+  display: none;
   flex-flow: column nowrap; }
   .send-form label {
     display: block;
     margin-bottom: 10px; }
-  .send-form .send-form__nameAndEmail,
-  .send-form .send-form__buttons {
-    display: flex;
-    flex-flow: row nowrap;
-    margin-bottom: 20px;
-    width: 100%; }
-    .send-form .send-form__nameAndEmail > *,
-    .send-form .send-form__buttons > * {
-      flex: 1; }
-      .send-form .send-form__nameAndEmail > *:first-child,
-      .send-form .send-form__buttons > *:first-child {
-        margin-right: 20px; }
   .send-form textarea {
     height: 110px;
     margin-bottom: 20px; }
@@ -334,9 +377,27 @@ header {
     border: 2px solid #eeeeee;
     border-radius: 5px;
     width: 100%; }
-  .send-form .send-form__btn {
+  .send-form .send-form__btn-send,
+  .send-form .send-form__btn-reset {
     margin-bottom: 10px; }
-    .send-form .send-form__btn:last-child {
+    .send-form .send-form__btn-send:last-child,
+    .send-form .send-form__btn-reset:last-child {
       color: black; }
+
+.send-form__nameAndEmail,
+.send-form__buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 20px;
+  width: 100%; }
+  .send-form__nameAndEmail > *,
+  .send-form__buttons > * {
+    flex: 1; }
+    .send-form__nameAndEmail > *:first-child,
+    .send-form__buttons > *:first-child {
+      margin-right: 20px; }
+
+.send-form_visible {
+  display: flex; }
 
 /*# sourceMappingURL=style.css.map */
