@@ -1,9 +1,31 @@
 // header section see in _basic.scss
+@keyframes sendFormAnim {
+  0% {
+    transform: scale(0);
+    opacity: 0.3;
+  }
+
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 .main-container {
   @extend %inner_container;
   padding-top: 80px;
   padding-bottom: 80px;
+  // responsive
+  @media screen and (max-width: $responsive_point_1) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
 
 .slider {
@@ -16,6 +38,10 @@
     min-height: 370px;
     @extend %inner_container;
     position: relative;
+    @media screen and (max-width: $responsive_point_1) {
+      text-align: center;
+      padding-bottom: 30px;
+    }
   }
 }
 
@@ -24,7 +50,7 @@
   width: 150px;
   bottom: 20px;
   left: 50%;
-  margin-left: -75px;
+  margin-left: -60px;
   z-index: 100;
 }
 
@@ -33,23 +59,38 @@
 .slider__slider-3 {
   display: none;
   flex-flow: row wrap-reverse;
+  justify-content: center;
   min-height: inherit;
+  @media screen and (max-width: $responsive_point_1) {
+    height: 600px;
+  }
   > div:first-child {
     flex: 1 1 50%;
     min-height: inherit;
     padding: 7% 150px 7% 0;
+    @media screen and (max-width: $responsive_point_1) {
+      padding-right: 0;
+      min-height: 0;
+      align-self: flex-start;
+    }
   }
-
 }
 
 .slider__image-block {
   margin: auto 0;
-  text-align: right;
+
 }
 
 .slider__slider-3 {
   > div:first-child {
     padding-right: 100px;
+    @media screen and (max-width: $responsive_point_1) {
+      padding-right: 0;
+    }
+  }
+  >div:last-child {
+    margin-top: auto;
+    margin-bottom: -3px;
   }
 }
 
@@ -100,6 +141,10 @@
   @extend %flex_row;
   min-height: 380px;
   border-bottom: 2px solid $border_color;
+  @media screen and (max-width: $responsive_point_1) {
+    justify-content: center;
+  }
+
 }
 
 .workWeDo__order {
@@ -107,6 +152,18 @@
   min-height: 300px;
   img {
     margin-bottom: 20px;
+    box-shadow: -3px 3px 5px rgba(100,100,100,0.5);
+    transition: all 0.3s;
+    &:hover {
+      transform: translateY(2px) translateX(-2px);
+      box-shadow: none;
+    }
+  }
+  @media screen and (max-width: $responsive_point_1) {
+    min-height: 340px;
+    border-left: 2px solid $border_color;
+    border-right: 2px solid $border_color;
+    text-align: center;
   }
 }
 
@@ -122,10 +179,14 @@
   min-height: 470px;
   padding: 70px 0;
   border-bottom: 2px solid $border_color;
+  justify-content: space-between;
   article {
     display: flex;
-    justify-content: space-between;
     flex-flow: column nowrap;
+    div {
+      margin-top: auto;
+      margin-bottom: 0;
+    }
   }
   h2 {
     margin-top: 20px;
@@ -134,20 +195,24 @@
 
 
 .description > article:first-of-type {
-  max-width: 70%;
-  padding-right: 80px;
+  flex: 2 1 66%;
+  @media screen and (max-width: $responsive_point_1) {
+    margin-bottom: 40px;
+  }
 }
-
 .description > article:last-of-type {
-  max-width: 30%;
+  flex: 1 1 33%;
 }
 
 .description__logo {
   position: relative;
+  border-bottom: 2px solid $border_color;
+  @media screen and (max-width: $responsive_point_1) {
+    text-align: center;
+  }
   img {
     width: 185px;
     padding: 0 0 35px 0;
-    border-bottom: 2px solid $border_color;
     margin-top: -25px;
   }
   h2 {
@@ -155,7 +220,7 @@
     z-index: 5;
     background: $white_1;
     position: absolute;
-    bottom: -5px;
+    bottom: -10px;
     left: 20%;
     right: 20%;
   }
@@ -195,12 +260,21 @@
   border-bottom: 2px solid $border_color;
   align-items: center;
   text-align: center;
+  @media screen and (max-width: $responsive_point_1) {
+    flex-flow: column wrap;
+    min-height: 250px;
+    img {
+      margin-top: 15px;
+    }
+  }
+
   img {
     width: 70%;
     opacity: 0.4;
     &:hover, &:active {
       opacity: 1;
     }
+
   }
 
   div:nth-of-type(3) {
@@ -210,10 +284,13 @@
 
 // map section
 .map {
+  display: flex;
+  flex-flow: row nowrap;
   min-height: 415px;
   background: url(../images/map.jpg) no-repeat;
   background-size: cover;
   position: relative;
+  background-position-x: 75%;
 }
 
 .map__writeUs {
@@ -226,6 +303,11 @@
   margin: auto;
   background-color: white;
   padding: 30px 25px 25px 25px;
+  @media screen and (max-width: $responsive_point_1) {
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
   span {
     font-weight: normal;
   }
@@ -253,6 +335,8 @@
   z-index: 10;
   display: none;
   flex-flow: column nowrap;
+  animation: sendFormAnim 0.6s;
+  animation-timing-function: ease-out;
   label {
     display: block;
     margin-bottom: 10px;
@@ -298,6 +382,11 @@
   display: flex;
 }
 
+.send-form_fadeout {
+  transform: scale(0);
+  transition-duration: 0.3s;
+  opacity: 0.3;
+}
 
 // footer section see in _basic.scss
 

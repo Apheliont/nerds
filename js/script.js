@@ -7,6 +7,19 @@ function init () {
     closeButton.addEventListener("click", closeSendForm, false);
     writeButton.addEventListener("click", showSendForm, false);
     window.addEventListener("keydown", closeSendFormByESC, false);
+    // slider autochanger
+    var radioInputs = document.querySelectorAll(".slider input[type=radio]");
+    var radioInputsCount = radioInputs.length;
+    var counter = 1;
+    setInterval(function(){
+        if (counter % radioInputsCount == 0)
+        {
+            counter = 0;
+        }
+        radioInputs.item(counter).click();
+        counter++;
+    }, 10000);
+    // slider autochanger ends
 }
 
 function showSendForm(event) {
@@ -19,7 +32,9 @@ function showSendForm(event) {
 
 function closeSendForm() {
     var sendForm = document.querySelector(".send-form");
-    sendForm.classList.remove("send-form_visible");
+    sendForm.classList.add("send-form_fadeout");
+    setTimeout(function() {sendForm.classList.remove("send-form_visible"); sendForm.classList.remove("send-form_fadeout")}, 300);
+
 }
 
 function closeSendFormByESC (event) {

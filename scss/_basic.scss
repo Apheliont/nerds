@@ -93,13 +93,21 @@ header {
     .header-container {
       @extend %inner_container;
       display: flex;
-      flex-flow: row nowrap;
-      height: 85px;
+      flex-flow: row wrap;
+      justify-content: center;
+      min-height: 85px;
       > a {
         flex: 1 1 280px;
         margin-right: 20px;
       }
     }
+  //responsive header
+  @media screen and (max-width: $responsive_point_1){
+    text-align: center;
+    > a {
+      flex: 1 1;
+    }
+  }
 }
 
 .header-container__menu {
@@ -111,13 +119,14 @@ header {
   flex-flow: row nowrap;
   text-align: right;
   li {
+    min-height: 0;
+    align-self: flex-end;
     flex: 1 1 90px;
     > a {
       text-decoration: none;
       text-transform: uppercase;
       text-align: center;
 
-      line-height: 130px;
       color: black;
       font-weight: 400;
       &:hover, &:hover i {
@@ -127,13 +136,34 @@ header {
         color: $button_grey-push;
       }
     }
-    &:first-child {
-      flex: 1 1;
-    }
+    //&:first-child {
+    //  flex: 1 1;
+    //}
     &:last-child {
       flex: 2 1 170px;
     }
   }
+  // responsive menu
+  @media screen and (max-width: $responsive_point_1){
+    flex: 1 1 480px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 0;
+    li {
+      flex: 1 1;
+      margin: 0 10px;
+      > a {
+        line-height: 30px;
+      }
+      &:last-child {
+        flex: 1 1 150px;
+        i {
+          display: none;
+        }
+      }
+    }
+    }
 }
 
 .header-container__logo {
@@ -171,7 +201,10 @@ header {
       background-color: $button_red-push;
     }
   }
-
+  @media screen and (max-width: $responsive_point_1) {
+    text-align: center;
+    padding: 20px 0;
+  }
 }
 
 
