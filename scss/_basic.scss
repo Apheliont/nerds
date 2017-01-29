@@ -100,8 +100,14 @@ header {
         flex: 1 1 280px;
         margin-right: 20px;
       }
+      //responsive header
+      @media screen and (max-width: $responsive_point_2) {
+        > a {
+          text-align: center;
+        }
+      }
     }
-  //responsive header
+
   @media screen and (max-width: $responsive_point_1){
     text-align: center;
     > a {
@@ -112,7 +118,8 @@ header {
 
 .header-container__menu {
   list-style: none;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 0;
   padding-left: 0;
   flex: 2 1 560px;
   @extend %flex_row;
@@ -144,11 +151,17 @@ header {
     }
   }
   // responsive menu
+  @media screen and (max-width: $responsive_point_2) {
+    li {
+      margin-bottom: 20px;
+    }
+  }
+
   @media screen and (max-width: $responsive_point_1){
     flex: 1 1 480px;
     text-align: center;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     padding: 15px 0;
     li {
       flex: 1 1;
@@ -157,7 +170,7 @@ header {
         line-height: 30px;
       }
       &:last-child {
-        flex: 1 1 150px;
+        flex: 1 1;
         i {
           display: none;
         }
@@ -201,9 +214,14 @@ header {
       background-color: $button_red-push;
     }
   }
-  @media screen and (max-width: $responsive_point_1) {
+  @media screen and (max-width: $responsive_point_3) {
     text-align: center;
-    padding: 20px 0;
+    justify-content: center;
+    padding-top: 20px;
+    > div:first-of-type {
+      text-align: center;
+      margin-bottom: 20px;
+    }
   }
 }
 

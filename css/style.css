@@ -90,6 +90,9 @@ header {
     header .header-container > a {
       flex: 1 1 280px;
       margin-right: 20px; }
+    @media screen and (max-width: 880px) {
+      header .header-container > a {
+        text-align: center; } }
   @media screen and (max-width: 480px) {
     header {
       text-align: center; }
@@ -98,7 +101,8 @@ header {
 
 .header-container__menu {
   list-style: none;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 0;
   padding-left: 0;
   flex: 2 1 560px;
   flex-flow: row nowrap;
@@ -119,12 +123,15 @@ header {
         color: #d5d5d5; }
     .header-container__menu li:last-child {
       flex: 2 1 170px; }
+  @media screen and (max-width: 880px) {
+    .header-container__menu li {
+      margin-bottom: 20px; } }
   @media screen and (max-width: 480px) {
     .header-container__menu {
       flex: 1 1 480px;
       text-align: center;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-around;
       padding: 15px 0; }
       .header-container__menu li {
         flex: 1 1;
@@ -132,7 +139,7 @@ header {
         .header-container__menu li > a {
           line-height: 30px; }
         .header-container__menu li:last-child {
-          flex: 1 1 150px; }
+          flex: 1 1; }
           .header-container__menu li:last-child i {
             display: none; } }
 
@@ -161,10 +168,14 @@ header {
       background-color: #d6494d; }
     .footer-container a:active {
       background-color: #b63538; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 800px) {
     .footer-container {
       text-align: center;
-      padding: 20px 0; } }
+      justify-content: center;
+      padding-top: 20px; }
+      .footer-container > div:first-of-type {
+        text-align: center;
+        margin-bottom: 20px; } }
 
 .red-btn {
   background-color: #fb565a; }
@@ -241,36 +252,45 @@ header {
   flex-flow: row wrap-reverse;
   justify-content: center;
   min-height: inherit; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 880px) {
     .slider__slider-1,
     .slider__slider-2,
     .slider__slider-3 {
-      height: 600px; } }
+      flex-flow: column-reverse nowrap; } }
   .slider__slider-1 > div:first-child,
   .slider__slider-2 > div:first-child,
   .slider__slider-3 > div:first-child {
     flex: 1 1 50%;
     min-height: inherit;
-    padding: 7% 150px 7% 0; }
-    @media screen and (max-width: 480px) {
+    padding: 7% 0 7% 0; }
+    @media screen and (max-width: 880px) {
       .slider__slider-1 > div:first-child,
       .slider__slider-2 > div:first-child,
       .slider__slider-3 > div:first-child {
-        padding-right: 0;
-        min-height: 0;
-        align-self: flex-start; } }
+        padding: 0;
+        min-height: 280px;
+        text-align: center; } }
+  .slider__slider-1 > div:last-child,
+  .slider__slider-2 > div:last-child,
+  .slider__slider-3 > div:last-child {
+    flex: 1 1 50%; }
+    @media screen and (max-width: 880px) {
+      .slider__slider-1 > div:last-child,
+      .slider__slider-2 > div:last-child,
+      .slider__slider-3 > div:last-child {
+        text-align: center;
+        height: 319px; } }
 
 .slider__image-block {
-  margin: auto 0; }
+  margin: auto 0;
+  text-align: right; }
 
-.slider__slider-3 > div:first-child {
-  padding-right: 100px; }
-  @media screen and (max-width: 480px) {
-    .slider__slider-3 > div:first-child {
-      padding-right: 0; } }
 .slider__slider-3 > div:last-child {
   margin-top: auto;
   margin-bottom: -3px; }
+  @media screen and (max-width: 880px) {
+    .slider__slider-3 > div:last-child {
+      margin: 0; } }
 
 .slider__controls label {
   cursor: pointer;
@@ -307,11 +327,15 @@ header {
 
 .slider_button {
   width: 240px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 20px; }
 
 .workWeDo {
   min-height: 380px;
   border-bottom: 2px solid #eeeeee; }
+  @media screen and (max-width: 880px) {
+    .workWeDo {
+      justify-content: space-around; } }
   @media screen and (max-width: 480px) {
     .workWeDo {
       justify-content: center; } }
@@ -326,8 +350,12 @@ header {
     .workWeDo__order img:hover {
       transform: translateY(2px) translateX(-2px);
       box-shadow: none; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 880px) {
     .workWeDo__order {
+      margin-bottom: 40px; } }
+  @media screen and (max-width: 880px) {
+    .workWeDo__order {
+      margin-bottom: 0;
       min-height: 340px;
       border-left: 2px solid #eeeeee;
       border-right: 2px solid #eeeeee;
@@ -361,10 +389,8 @@ header {
 
 .description__logo {
   position: relative;
+  text-align: center;
   border-bottom: 2px solid #eeeeee; }
-  @media screen and (max-width: 480px) {
-    .description__logo {
-      text-align: center; } }
   .description__logo img {
     width: 185px;
     padding: 0 0 35px 0;
@@ -377,6 +403,9 @@ header {
     bottom: -10px;
     left: 20%;
     right: 20%; }
+  @media screen and (max-width: 800px) {
+    .description__logo {
+      margin-top: 50px; } }
 
 .description__list {
   list-style: none;
@@ -404,12 +433,15 @@ header {
   border-bottom: 2px solid #eeeeee;
   align-items: center;
   text-align: center; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 800px) {
     .clients {
-      flex-flow: column wrap;
-      min-height: 250px; }
-      .clients img {
-        margin-top: 15px; } }
+      flex-flow: column wrap; }
+      .clients div {
+        width: 40%;
+        margin-top: 30px; } }
+  @media screen and (max-width: 480px) {
+    .clients div {
+      width: 70%; } }
   .clients img {
     width: 70%;
     opacity: 0.4; }
@@ -472,7 +504,7 @@ header {
   .send-form textarea {
     height: 110px;
     margin-bottom: 20px; }
-  .send-form input, .send-form input, .send-form textarea {
+  .send-form input, .send-form textarea {
     padding: 8px 20px;
     border: 2px solid #eeeeee;
     border-radius: 5px;
@@ -487,9 +519,8 @@ header {
 .send-form__nameAndEmail,
 .send-form__buttons {
   display: flex;
-  flex-flow: row nowrap;
-  margin-bottom: 20px;
-  width: 100%; }
+  flex-flow: row wrap;
+  margin-bottom: 20px; }
   .send-form__nameAndEmail > *,
   .send-form__buttons > * {
     flex: 1; }

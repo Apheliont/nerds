@@ -61,36 +61,41 @@
   flex-flow: row wrap-reverse;
   justify-content: center;
   min-height: inherit;
-  @media screen and (max-width: $responsive_point_1) {
-    height: 600px;
+  @media screen and (max-width: $responsive_point_2) {
+    flex-flow: column-reverse nowrap;
   }
   > div:first-child {
     flex: 1 1 50%;
     min-height: inherit;
-    padding: 7% 150px 7% 0;
-    @media screen and (max-width: $responsive_point_1) {
-      padding-right: 0;
-      min-height: 0;
-      align-self: flex-start;
+    padding: 7% 0 7% 0;
+    @media screen and (max-width: $responsive_point_2) {
+      padding: 0;
+      min-height: 280px;
+      text-align: center;
+    }
+  }
+  > div:last-child {
+    flex: 1 1 50%;
+    @media screen and (max-width: $responsive_point_2) {
+      text-align: center;
+      height: 319px;
     }
   }
 }
+
 
 .slider__image-block {
   margin: auto 0;
-
+  text-align: right;
 }
 
 .slider__slider-3 {
-  > div:first-child {
-    padding-right: 100px;
-    @media screen and (max-width: $responsive_point_1) {
-      padding-right: 0;
-    }
-  }
-  >div:last-child {
+  > div:last-child {
     margin-top: auto;
     margin-bottom: -3px;
+    @media screen and (max-width: $responsive_point_2) {
+      margin: 0;
+    }
   }
 }
 
@@ -135,16 +140,20 @@
   @extend %button_link;
   width: 240px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 // offers section
 .workWeDo {
   @extend %flex_row;
   min-height: 380px;
   border-bottom: 2px solid $border_color;
+
+  @media screen and (max-width: $responsive_point_2) {
+    justify-content: space-around;
+    }
   @media screen and (max-width: $responsive_point_1) {
     justify-content: center;
   }
-
 }
 
 .workWeDo__order {
@@ -159,7 +168,11 @@
       box-shadow: none;
     }
   }
-  @media screen and (max-width: $responsive_point_1) {
+  @media screen and (max-width: $responsive_point_2) {
+    margin-bottom: 40px;
+  }
+  @media screen and (max-width: $responsive_point_2) {
+    margin-bottom: 0;
     min-height: 340px;
     border-left: 2px solid $border_color;
     border-right: 2px solid $border_color;
@@ -206,10 +219,8 @@
 
 .description__logo {
   position: relative;
+  text-align: center;
   border-bottom: 2px solid $border_color;
-  @media screen and (max-width: $responsive_point_1) {
-    text-align: center;
-  }
   img {
     width: 185px;
     padding: 0 0 35px 0;
@@ -223,6 +234,9 @@
     bottom: -10px;
     left: 20%;
     right: 20%;
+  }
+  @media screen and (max-width: $responsive_point_3) {
+    margin-top: 50px;
   }
 }
 
@@ -260,11 +274,16 @@
   border-bottom: 2px solid $border_color;
   align-items: center;
   text-align: center;
-  @media screen and (max-width: $responsive_point_1) {
+  @media screen and (max-width: $responsive_point_3) {
     flex-flow: column wrap;
-    min-height: 250px;
-    img {
-      margin-top: 15px;
+    div {
+      width: 40%;
+      margin-top: 30px;
+    }
+  }
+  @media screen and (max-width: $responsive_point_1) {
+    div {
+      width: 70%;
     }
   }
 
@@ -346,7 +365,7 @@
     height: 110px;
     margin-bottom: 20px;
   }
-  input, input, textarea {
+  input, textarea {
     padding: 8px 20px;
     border: 2px solid $border_color;
     border-radius: 5px;
@@ -366,9 +385,9 @@
 .send-form__nameAndEmail,
 .send-form__buttons {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   margin-bottom: 20px;
-  width: 100%;
+
   > * {
     flex: 1;
     &:first-child {
