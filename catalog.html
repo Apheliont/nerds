@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/jquery.range.css" rel="stylesheet">
+    <script src="js/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.range-min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://use.fontawesome.com/d3fcf98910.js"></script>
+    <script difer src="js/common.js"></script>
+    <script difer src="js/catalog.js"></script>
+    <title>Nerds - Catalog</title>
+</head>
+<body class="catalog">
+<div class="wrapper">
+    <header>
+        <nav class="header-container">
+            <a href="index.html"><img class="header-container__logo" src="images/logo.svg" alt="logo"></a>
+            <ul class="header-container__menu">
+                <li><a href="#">Студия</a></li>
+                <li><a href="#">Клиенты</a></li>
+                <li><a href="catalog.html">Магазин</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Корзина</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="welcome">
+        <h1>Добро пожаловать в магазин<br> готовых макетов</h1>
+    </section>
+    <div class="main-container">
+        <section class="filter-form">
+            <article>
+                <form action="#" method="POST">
+                    <fieldset class="filter-form__price-range">
+                        <legend>Стоимость</legend>
+                        <div class="filter-form__slider-block">
+                            <input class="range-slider" type="hidden" value="0,200000">
+                        </div>
+                        <label for="price-min">От</label>
+                        <input type="number" id="price-min" name="price-min" placeholder="0">
+                        <label for="price-max">До</label>
+                        <input type="number" id="price-max" name="price-max" placeholder="15000">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Сетка</legend>
+                        <label for="adaptive"><input type="radio" name="layout" id="adaptive" checked><span></span>Адаптивная</label>
+                        <label for="fixed"><input type="radio" name="layout" id="fixed"><span></span>Фиксированная</label>
+                        <label for="flexible"><input type="radio" name="layout" id="flexible"><span></span>Резиновая</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Особенности</legend>
+                        <label for="slider"><input type="checkbox" name="slider" id="slider"><span></span>Слайдер</label>
+                        <label for="advantages"><input type="checkbox" name="advantages" id="advantages"><span></span>Блок преимуществ</label>
+                        <label for="news"><input type="checkbox" name="news" id="news"><span></span>Новости</label>
+                        <label for="gallery"><input type="checkbox" name="gallery" id="gallery"><span></span>Галерея</label>
+                        <label for="trash"><input type="checkbox" name="trash" id="trash"><span></span>Корзина</label>
+                    </fieldset>
+                </form>
+            </article>
+        </section>
+        <section class="catalog-images">
+            <div class="sort">
+                <h3>Сортировать:</h3>
+                <ul>
+                    <li><a href="">По цене</a></li>
+                    <li><a href="">По типу</a></li>
+                    <li><a href="">По функционалу</a></li>
+                </ul>
+                <div class="sort__arrows">
+                    <a class="sort__arrow-down" href="#"></a>
+                    <a class="sort__arrow-up" href="#"></a>
+                </div>
+            </div>
+            <article>
+                <img src="images/catalog/template1.png" alt="template_1">
+            </article>
+            <article>
+                <img src="images/catalog/template2.png" alt="template_2">
+            </article>
+            <article>
+                <img src="images/catalog/template3.png" alt="template_3">
+            </article>
+            <article>
+                <img src="images/catalog/template4.png" alt="template_4">
+            </article>
+            <article>
+                <img src="images/catalog/template5.png" alt="template_5">
+            </article>
+            <article>
+                <img src="images/catalog/template6.png" alt="template_6">
+            </article>
+            <div class="page-links">
+                <ul>
+                    <li><a href="#" class="grey-btn active">1</a></li>
+                    <li><a href="#" class="grey-btn">2</a></li>
+                    <li><a href="#" class="grey-btn">3</a></li>
+                    <li><a href="#" class="grey-btn">Следующая</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <section class="map">
+        <form class="send-form" action="#" method="POST">
+            <div class="send-form__nameAndEmail">
+                <div>
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Представьтесь пожалуйста" required>
+                </div>
+                <div>
+                    <label for="email">Ваш e-mail:</label>
+                    <input type="text" id="email" name="email" placeholder="Для отправки ответа" required>
+                </div>
+            </div>
+            <div>
+                <label for="text">Текст Письма</label>
+                <textarea class="textarea" id="text" name="text" placeholder="В свободной форме"></textarea>
+            </div>
+            <div class="send-form__buttons">
+                <input class="send-form__btn-send red-btn" type="submit" value="Отправить">
+                <input class="send-form__btn-reset grey-btn" type="reset" value="Отмена">
+            </div>
+        </form>
+        <div class="map__writeUs">
+            <h2>NЁRDS <span>design studio</span></h2>
+            <p>350000, Краснодар,
+                ул. Головатого, 100</p>
+            <p>
+                тел. +7 (861) 275-75-75
+            </p>
+            <a class="map_writeUsButton red-btn" href="sendform.html">Напишите нам</a>
+        </div>
+    </section>
+    <footer class="footer-container">
+        <div>
+            <a href="https://www.vk.com"><i class="fa fa-lg fa-vk" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <div>
+            <h1>Давайте дружить, это выгодно!</h1>
+            <p>Скидка 10% для друзей из социальных сетей.</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://use.fontawesome.com/d3fcf98910.js"></script>
+    <title>Nerds - Send Form</title>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <nav class="header-container">
+            <a href="index.html"><img class="header-container__logo" src="images/logo.svg" alt="logo"></a>
+            <ul class="header-container__menu">
+                <li><a href="#">Студия</a></li>
+                <li><a href="#clients">Клиенты</a></li>
+                <li><a href="catalog.html">Магазин</a></li>
+                <li><a href="index.html#contacts">Контакты</a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Корзина</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <form class="send-form send-form_page" action="index.html" method="POST">
+            <div class="send-form__nameAndEmail">
+                <div>
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" placeholder="Представьтесь пожалуйста" required>
+                </div>
+                <div>
+                    <label for="email">Ваш e-mail:</label>
+                    <input type="text" id="email" name="email" placeholder="Для отправки ответа" required>
+                </div>
+            </div>
+            <div>
+                <label for="text">Текст Письма</label>
+                <textarea class="textarea" id="text" name="text" placeholder="В свободной форме"></textarea>
+            </div>
+            <div class="send-form__buttons">
+                <input class="send-form__btn-send red-btn" type="submit" value="Отправить">
+                <input class="send-form__btn-reset grey-btn" type="reset" value="Отмена">
+            </div>
+        </form>
+    </section>
+    <footer class="footer-container">
+        <div>
+            <a href="https://www.vk.com"><i class="fa fa-lg fa-vk" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        <div>
+            <h1>Давайте дружить, это выгодно!</h1>
+            <p>Скидка 10% для друзей из социальных сетей.</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

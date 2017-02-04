@@ -1,5 +1,5 @@
 /**
- * Created by Aphel on 23.01.2017.
+ * Created by Aphel on 04.02.2017.
  */
 function init () {
     var writeButton = document.querySelector(".map_writeUsButton");
@@ -7,19 +7,6 @@ function init () {
     closeButton.addEventListener("click", closeSendForm, false);
     writeButton.addEventListener("click", showSendForm, false);
     window.addEventListener("keydown", closeSendFormByESC, false);
-    // slider autochanger
-    var radioInputs = document.querySelectorAll(".slider input[type=radio]");
-    var radioInputsCount = radioInputs.length;
-    var counter = 1;
-    setInterval(function(){
-        if (counter % radioInputsCount == 0)
-        {
-            counter = 0;
-        }
-        radioInputs.item(counter).click();
-        counter++;
-    }, 10000);
-    // slider autochanger ends
 }
 
 function showSendForm(event) {

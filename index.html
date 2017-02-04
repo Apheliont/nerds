@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://use.fontawesome.com/d3fcf98910.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/jQuery/jquery-3.1.1.min.js"></script>
+	<script difer src="js/common.js"></script>
+	<script difer src="js/index.js"></script>
 	<title>Nerds</title>
 </head>
 <body>
@@ -14,9 +16,9 @@
 				<a href="index.html"><img class="header-container__logo" src="images/logo.svg" alt="logo"></a>
 				<ul class="header-container__menu">
 					<li><a href="#">Студия</a></li>
-					<li><a href="#">Клиенты</a></li>
-					<li><a href="#">Магазин</a></li>
-					<li><a href="#">Контакты</a></li>
+					<li><a href="#clients">Клиенты</a></li>
+					<li><a href="catalog.html">Магазин</a></li>
+					<li><a href="#contacts">Контакты</a></li>
 					<li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Корзина</a></li>
 				</ul>
 			</nav>
@@ -115,14 +117,14 @@
 					</div>
 				</article>
 		</section>
-		<section class="clients">
+		<section class="clients" id="clients">
 			<div><img src="images/client_1.svg" alt=""></div>
 			<div><img src="images/client_2.svg" alt=""></div>
 			<div><img src="images/client_3.png" alt=""></div>
 		</section>
 	</div>
-	<section class="map">
-			<form class="send-form" action="#" method="POST">
+	<section class="map" id="contacts">
+			<form class="send-form" action="sendForm.html" method="POST">
 				<div class="send-form__nameAndEmail">
 					<div>
 						<label for="name">Ваше имя:</label>
@@ -154,7 +156,7 @@
 	</section>
 	<footer class="footer-container">
 		<div>
-			<a href="https://www.vk.com"><i class="fa fa-lg fa-vk" aria-hidden="true"></i></a>
+			<a href="https://www.vk.com"><noscript><h1>lol</h1></noscript><i class="fa fa-lg fa-vk" aria-hidden="true"></i></a>
 			<a href="https://www.facebook.com"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a>
 			<a href="https://www.instagram.com"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
 		</div>
