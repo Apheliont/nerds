@@ -64,21 +64,6 @@ ul {
   margin-right: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-.textarea {
-  font-family: $font;
-  font-size: 14px;
-  &:hover {
-    border-color: $border_hover;
-  }
-  &:focus {
-    border-color: $border_focus;
-    outline: none;
-  }
-}
-
-
 body {
   margin: 0;
   padding: 0;
@@ -231,18 +216,35 @@ header {
   display: block;
 }
 
+// send form
+
+input[type="text"],
+input[type="email"],
+.textarea {
+  font-family: $font;
+  font-size: 14px;
+  &:hover {
+    border-color: $border_hover;
+  }
+  &:focus {
+    border-color: $border_focus;
+    outline: none;
+  }
+}
+
 .send-form {
   position: fixed;
   background: $white_1;
   max-width: 630px;
-  height: 415px;
+  min-height: 416px;
   padding: 42px 80px;
   box-shadow: 5px 5px 20px grey;
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -208px;
   left: 0;
   right: 0;
-  top: 0;
-  bottom: 0;
+  top: 50%;
   z-index: 10;
   display: none;
   flex-flow: column nowrap;
@@ -263,15 +265,16 @@ header {
     border-radius: 5px;
     width: 100%;
   }
+
   .send-form__btn-send,
   .send-form__btn-reset  {
     @extend %button_link;
+    border: none;
     margin-bottom: 10px;
     &:last-child {
       color: black;
     }
   }
-
 }
 
 .send-form__nameAndEmail,
@@ -279,16 +282,17 @@ header {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 20px;
-
-  > div {
-    flex: 1;
-    &:first-child {
-      margin-right: 20px;
+  justify-content: space-between;
+  > * {
+    flex: 1 1 200px;
+    max-width: 220px;
+    @media screen and (max-width: $responsive_point_3) {
+      max-width: 100%;
     }
   }
 }
 
-
+// page for no javascript users
 .send-form_page {
   display: flex;
   position: static;

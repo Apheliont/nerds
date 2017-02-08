@@ -34,14 +34,15 @@
     display: none;
   }
   background-color: $background_slider;
-  .slider__container {
-    min-height: 370px;
-    @extend %inner_container;
-    position: relative;
-    @media screen and (max-width: $responsive_point_1) {
-      text-align: center;
-      padding-bottom: 30px;
-    }
+}
+
+.slider__container {
+  min-height: 370px;
+  @extend %inner_container;
+  position: relative;
+  @media screen and (max-width: $responsive_point_1) {
+    text-align: center;
+    padding-bottom: 30px;
   }
 }
 
